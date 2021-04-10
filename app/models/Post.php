@@ -31,7 +31,7 @@ ORDER BY posted_at DESC LIMIT $per_page OFFSET $offset ;";
 
     public function get($id)
     {
-         $sql = "
+        $sql = "
 SELECT id, title, author_name, posted_at, image_name, content FROM posts
 WHERE id = :id ;";
         $stmt = $this->db->prepare($sql);
@@ -42,6 +42,21 @@ WHERE id = :id ;";
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         return $row;
+    }
+
+    public function delete($id)
+    {
+        // TODO: Implement delete method here
+        $sq="DELETE FROM posts WHERE id=:id";
+        $stmt = $this->db->prepare($sq);
+        $stmt->bindParam(':id', $id);        
+        $stmt->execute();
         
+        
+    }
+
+    public function edit($id, $content)
+    {
+        // TODO: Implement edit method here
     }
 }

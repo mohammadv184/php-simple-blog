@@ -5,7 +5,9 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <title>وبلاگ ساده</title>
-  <link href="../../assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="assets/css/vazir-font.css" rel="stylesheet">
+  <link href="assets/css/fontello.css" rel="stylesheet">
 </head>
 <body>
   <div id="layoutDefault">
@@ -32,21 +34,27 @@
           <div class="container">
             <div class="row">
               <?php foreach ($posts as $post) { ?>
-              <div class="col-md-6 col-xl-4 mb-5">
-                <a class="card post-preview lift h-100" href="post.php?id=<?php echo $post['id']; ?>"><img alt="..." class="card-img-top" src="../../files/<?php echo $post['image_name']; ?>">
-                <div class="card-body">
-                  <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                </div>
-                <div class="card-footer">
-                  <div class="post-preview-meta">
-                    <div class="post-preview-meta-details">
+              <div class="col-md-12 col-xl-4 mb-5">
+                <div class="card post-preview lift h-100">
+                  <a href="post.php?id=<?php echo $post['id']; ?>"><img class="card-img-top" src="files/<?php echo $post['image_name']; ?>"></a>
+                  <div class="card-body">
+                    <a href="post.php?id=<?php echo $post['id']; ?>"><h5 class="card-title"><?php echo $post['title']; ?></h5></a>
+                  </div>
+                  <div class="card-footer">
+                    <div class="post-preview-meta">
                       <div class="post-preview-meta-details">
-                        <div class="post-preview-meta-details-name"><?php echo $post['author_name']; ?></div>
-                        <div class="post-preview-meta-details-date"><?php echo digitsToPersian(timeToAgo($post['posted_at'])) ?> &#xB7; خواندن <?php echo digitsToPersian(estimateReadingTime($post['content'])) ?> دقیقه</div>
+                        <div class="post-preview-meta-details">
+                          <div class="post-preview-meta-details-name"><?php echo $post['author_name']; ?></div>
+                          <div class="post-preview-meta-details-date"><?php echo digitsToPersian(timeToAgo($post['posted_at'])) ?> &#xB7; خواندن <?php echo digitsToPersian(estimateReadingTime($post['content'])) ?> دقیقه</div>
+                        </div>
                       </div>
                     </div>
+                    <div class="float-right">
+                      <a href="delete-post.php?id=<?php echo $post['id']; ?>"><i class="icon-trash"></i></a>
+                      <a href="edit-post.php?id=<?php echo $post['id']; ?>"><i class="icon-pencil"></i></a>
+                    </div>
                   </div>
-                </div></a>
+                </div>
               </div>
               <?php } ?>
             </div>
@@ -75,7 +83,7 @@
           <hr class="my-5">
           <div class="row align-items-center">
             <div class="col-md-12 text-right small">
-              By <a href="#" target="_blank">Mohammad Abbasi</a>
+              By <a href="https://quera.ir" target="_blank">Quera</a>
             </div>
           </div>
         </div>

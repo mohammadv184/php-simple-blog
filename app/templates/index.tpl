@@ -83,7 +83,7 @@
           <hr class="my-5">
           <div class="row align-items-center">
             <div class="col-md-12 text-right small">
-              By <a href="https://quera.ir" target="_blank">Quera</a>
+              By <a href="#" target="_blank">Mohammad Abbasi</a>
             </div>
           </div>
         </div>

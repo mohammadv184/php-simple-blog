@@ -55,8 +55,15 @@ WHERE id = :id ;";
         
     }
 
-    public function edit($id, $content)
+
+    public function edit($id, $title, $author_name, $content)
     {
-        // TODO: Implement edit method here
+        $sql="UPDATE posts SET title=:title , author_name=:author_name ,content=:content WHERE id=:id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':author_name', $author_name);
+        $stmt->bindParam(':title', $title);
+        $stmt->execute();
     }
 }

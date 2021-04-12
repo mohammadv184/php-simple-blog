@@ -46,7 +46,7 @@ WHERE id = :id ;";
 
     public function delete($id)
     {
-        // TODO: Implement delete method here
+        
         $sq="DELETE FROM posts WHERE id=:id";
         $stmt = $this->db->prepare($sq);
         $stmt->bindParam(':id', $id);        

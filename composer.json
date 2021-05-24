@@ -1,0 +1,15 @@
+{
+    "name": "mohammadv184/php-simple-blog",
+    "description": "a php simple blog",
+    "type": "project",
+    "require": {
+        "php": "7.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Abbasi",
+            "email": "mohammad.v184@gmail.com"
+        }
+    ]
+}
